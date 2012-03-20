@@ -9,7 +9,7 @@ class Request(object):
 
   def addMessage(self, to, text, sender='', TTL='', tariff='', serviceCode='', deliveryTime=''):
     self.messages.append({'receiver': to, 
-                          'text': text, 
+                          'text': text.decode("utf8").encode("latin1"),
                           'sender': sender,
                           'TTL': TTL,
                           'tariff': tariff,
